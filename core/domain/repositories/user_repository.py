@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from core.entities.user import User
+from core.domain.entities.user import User
 from typing import Optional, List
 
 class UserRepository(ABC):

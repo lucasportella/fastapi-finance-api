@@ -1,6 +1,6 @@
 from abc import ABC,abstractmethod
 from typing import List, Optional
-from core.entities.property import property
+from core.domain.entities.property import property
 
 class PropertyRepository(ABC):
   @abstractmethod
