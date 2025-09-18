@@ -1,5 +1,7 @@
 from datetime import date
 from core.domain.entities.user import User
+from core.infrastructure.database.mongo_user_repository import MongoUserRepository
+from core.infrastructure.database.mongo import db
 
 user1 = User(
     first_name="Lucas",
@@ -40,6 +42,6 @@ user2.add_expense({"type": "Transport", "net_expense": 200.0})
 
 seed_users = [user1, user2]
 
-seed_users_dicts = [u.__dict__ for u in seed_users]
+seed_users_dicts = [MongoUserRepository(db).add(u) for u in seed_users]
 
 print(seed_users_dicts)
