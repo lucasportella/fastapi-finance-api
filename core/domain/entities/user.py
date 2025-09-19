@@ -1,6 +1,6 @@
 from typing import TypedDict, Optional, List
 from dataclasses import dataclass, field
-from datetime import date
+from datetime import datetime
 
 # TODO: improve classes types(Asset, Income,Expense type field) for restricted strings list
 class Asset(TypedDict):
@@ -30,7 +30,7 @@ class Expense(TypedDict):
 class User:
     first_name: str
     last_name: str
-    date_of_birth: date
+    date_of_birth: datetime
     email: str
     address: str
     phone: str

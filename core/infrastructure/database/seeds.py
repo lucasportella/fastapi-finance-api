@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import datetime
 from core.domain.entities.user import User
 from core.infrastructure.database.mongo_user_repository import MongoUserRepository
 from core.infrastructure.database.mongo import db
@@ -6,7 +6,7 @@ from core.infrastructure.database.mongo import db
 user1 = User(
     first_name="Lucas",
     last_name="Portella",
-    date_of_birth=date(1995, 7, 15),
+    date_of_birth=datetime(1995, 7, 15),
     email="lucas@example.com",
     address="123 Main St, Porto Alegre, Brazil",
     phone="+55 51 91234-5678",
@@ -27,7 +27,7 @@ user1.add_expense({"type": "Food", "net_expense": 600.0})
 user2 = User(
     first_name="Alice",
     last_name="Santos",
-    date_of_birth=date(1990, 3, 22),
+    date_of_birth=datetime(1990, 3, 22),
     email="alice@example.com",
     address="456 Elm St, São Paulo, Brazil",
     phone="+55 11 98765-4321",
