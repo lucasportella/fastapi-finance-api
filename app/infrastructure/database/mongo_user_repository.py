@@ -1,6 +1,6 @@
 from typing import List
-from core.domain.repositories.user_repository import UserRepository
-from core.domain.entities.user import User
+from app.domain.repositories.user_repository import UserRepository
+from app.domain.entities.user import User
 from pymongo.database import Database
 from dataclasses import asdict
 

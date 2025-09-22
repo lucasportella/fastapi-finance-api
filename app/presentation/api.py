@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from core.presentation.routes.user_routes import router as user_router
+from app.presentation.routes.user_routes import router as user_router
 
 app = FastAPI(title="Loan & Property API")
 

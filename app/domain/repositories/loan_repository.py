@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from typing import List, Optional
-from core.domain.entities.loan import Loan
+from app.domain.entities.loan import Loan
 
 class LoanRepository(ABC):
   @abstractmethod

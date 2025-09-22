@@ -1,7 +1,7 @@
 from datetime import datetime
-from core.domain.entities.user import User
-from core.infrastructure.database.mongo_user_repository import MongoUserRepository
-from core.infrastructure.database.mongo import db
+from app.domain.entities.user import User
+from app.infrastructure.database.mongo_user_repository import MongoUserRepository
+from app.infrastructure.database.mongo import db
 
 user1 = User(
     first_name="Lucas",
