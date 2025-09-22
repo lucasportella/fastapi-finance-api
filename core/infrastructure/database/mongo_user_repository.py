@@ -18,7 +18,7 @@ class MongoUserRepository(UserRepository):
     return self.db.users.find()
   
   def update(self, user: User) -> User:
-    return self.db.users.update_one({"_id": user.id}, {"$set": asdict(user)}) # pydantic .dict() method converts class to dict
+    return self.db.users.update_one({"_id": user.id}, {"$set": asdict(user)})
   
   def delete(self, user_id: str) -> bool:
     return self.db.users.delete_one({"_id": user_id})
