@@ -1,6 +1,6 @@
 from datetime import datetime
 from app.domain.entities.user import User
-from app.infrastructure.database.mongo_user_repository import MongoUserRepository
+from app.infrastructure.repositories.mongo_user_repository import MongoUserRepository
 from app.infrastructure.database.mongo import db
 
 user1 = User(

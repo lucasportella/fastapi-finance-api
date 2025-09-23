@@ -1,5 +1,5 @@
 from app.use_cases.user.create_user import CreateUser
-from app.infrastructure.database.mongo_user_repository import MongoUserRepository
+from app.infrastructure.repositories.mongo_user_repository import MongoUserRepository
 from app.infrastructure.database.mongo import db
 from app.use_cases.user.get_all_users import GetAllUsers
 

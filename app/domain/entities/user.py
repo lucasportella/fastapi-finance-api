@@ -2,6 +2,7 @@ from typing import TypedDict, Optional, List
 from dataclasses import dataclass, field
 from datetime import datetime
 
+
 # TODO: improve classes types(Asset, Income,Expense type field) for restricted strings list
 class Asset(TypedDict):
   type: str
@@ -35,7 +36,7 @@ class User:
     address: str
     phone: str
     hashed_password: str
-    id: Optional[int] = None
+    id: str | None
     assets: List[dict] = field(default_factory=list)
     debts: List[dict] = field(default_factory=list)
     incomes: List[dict] = field(default_factory=list)
