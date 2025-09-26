@@ -36,20 +36,20 @@ class User:
     address: str
     phone: str
     hashed_password: str
-    id: str | None
-    assets: List[dict] = field(default_factory=list)
-    debts: List[dict] = field(default_factory=list)
-    incomes: List[dict] = field(default_factory=list)
-    expenses: List[dict] = field(default_factory=list)
+    id: str | None = None
+    assets: List[Asset] = field(default_factory=list)
+    debts: List[Debt] = field(default_factory=list)
+    incomes: List[Income] = field(default_factory=list)
+    expenses: List[Expense] = field(default_factory=list)
 
-    def add_asset(self, asset: dict):
+    def add_asset(self, asset: Asset):
         self.assets.append(asset)
 
-    def add_debt(self, debt: dict):
+    def add_debt(self, debt: Debt):
         self.debts.append(debt)
 
-    def add_income(self, income: dict):
+    def add_income(self, income: Income):
         self.incomes.append(income)
 
-    def add_expense(self, expense: dict):
+    def add_expense(self, expense: Expense):
         self.expenses.append(expense)
