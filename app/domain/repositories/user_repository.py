@@ -9,7 +9,7 @@ class UserRepository(ABC):
     pass
   
   @abstractmethod
-  def get_by_id(self, user_id: int) -> Optional[User]:
+  def get_by_id(self, user_id: str) -> Optional[User]:
     pass
   
   @abstractmethod
@@ -21,5 +21,5 @@ class UserRepository(ABC):
     pass
   
   @abstractmethod
-  def delete(self, user_id: int) -> bool:
+  def delete(self, user_id: str) -> bool:
     pass
