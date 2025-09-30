@@ -1,0 +1,11 @@
+User → Entity
+
+UserRepository → Domain interface
+
+CreateUser → Use Case
+
+MongoUserRepository → Interface Adapter
+
+dependencies.py → Interface Adapter (presentation wiring)
+
+mongo.py + main.py → Frameworks & Drivers
