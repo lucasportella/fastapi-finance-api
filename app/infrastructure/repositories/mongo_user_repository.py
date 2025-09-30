@@ -11,7 +11,9 @@ class MongoUserRepository(UserRepository):
     self.db = db
     
   def add(self, user: User) -> User:
-    return self.db.users.insert_one(asdict(user))
+    result = self.db.users.insert_one(asdict(user))
+    user.id = str(result.inserted_id)
+    return user
   
   def get_by_id(self, user_id: str) -> User:
     return self.db.users.find_one({"_id": ObjectId(user_id)})

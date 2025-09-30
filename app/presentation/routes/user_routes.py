@@ -1,4 +1,3 @@
-from typing import List
 from fastapi import APIRouter, Depends
 from pydantic import BaseModel
 from app.domain.entities.user import User
@@ -16,6 +15,7 @@ class APIResponse(BaseModel):
   message: str
   data: dict | None = None
 
+# TODO: change Domain models to pydantic
 @router.get('/users', response_model=APIResponse)
 def get_all_users_endpoint(use_case: GetAllUsers = Depends(get_all_user_case)):
   users = use_case.execute()
@@ -27,10 +27,11 @@ def get_all_users_endpoint(use_case: GetAllUsers = Depends(get_all_user_case)):
 
 @router.post('/create', response_model=APIResponse)
 def create_user_endpoint(user: User, use_case: CreateUser = Depends(create_user_case)):
-  created = use_case.execute(user)
+  createdUser = use_case.execute(user)
   return APIResponse(
-    status='success' if created else 'error',
-    message=f'User {created.id} created' if created else 'User not created',
+    status='success' if createdUser.id else 'error',
+    message=f'User {createdUser.id} created' if createdUser.id else 'User not created',
+    data={**createdUser.__dict__}
   )
 
 
