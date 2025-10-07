@@ -1,31 +1,33 @@
-from typing import TypedDict, Optional, List
 from dataclasses import dataclass, field
 from datetime import datetime
+from typing import List, Optional, TypedDict
 
 
-# TODO: improve classes types(Asset, Income,Expense type field) for restricted strings list
 class Asset(TypedDict):
-  type: str
-  value: float
-  description: str
-  year: Optional[int]
-  id: Optional[int]
+    type: str
+    value: float
+    description: str
+    year: Optional[int]
+    id: Optional[int]
+
 
 class Debt(TypedDict):
-  total_value: float
-  interest_rate: float
-  total_installments: int
-  principal_paid: float
-  remaining: float
+    total_value: float
+    interest_rate: float
+    total_installments: int
+    principal_paid: float
+    remaining: float
+
 
 class Income(TypedDict):
-  type: str
-  netIncome: float
-  
+    type: str
+    netIncome: float
+
+
 class Expense(TypedDict):
-  type: str
-  net_expense: float
-  
+    type: str
+    net_expense: float
+
 
 @dataclass
 class User:
@@ -36,7 +38,7 @@ class User:
     address: str
     phone: str
     hashed_password: str
-    id: str | None = None
+    id: str
     assets: List[Asset] = field(default_factory=list)
     debts: List[Debt] = field(default_factory=list)
     incomes: List[Income] = field(default_factory=list)
